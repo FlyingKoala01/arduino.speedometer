@@ -60,21 +60,21 @@ const Speedometer = () => {
   return (
     <div className="relative flex flex-col items-center bg-[#141526] justify-center h-screen">
       <h1 className="text-2xl font-bold mb-4 text-white">Robot Speedometers</h1>
-      <div className="flex mt-4 w-full m-10 justify-between h-1/5 flex-row ">
-        <div id="left-speed">
-          <p className="text-white">
+      <div className="flex mt-4 w-full m-10 justify-between h-2/5 flex-row ">
+        <div id="left-speed" className="flex flex-col ml-10">
+          <p className="text-white mb-5">
             Average Left Speed: {calculateAverage(leftSpeeds).toFixed(2)}
           </p>
           <SpeedGraph data={leftSpeeds} />
         </div>
-        <div id="right-speed">
-          <p className="text-white">
+        <div id="right-speed" className="flex flex-col mr-10">
+          <p className="text-white mb-5">
             Average Right Speed: {calculateAverage(rightSpeeds).toFixed(2)}
           </p>
           <SpeedGraph data={rightSpeeds} />
         </div>
       </div>
-      <div className="flex w-full justify-between mt-20 px-10 h-2/5">
+      <div className="flex w-full justify-between px-10 h-2/5">
         <div className="flex w-1/3 flex-col items-center">
           <div className="text-xl font-semibold text-white">
             Left Speedometer

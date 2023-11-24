@@ -22,10 +22,6 @@ const formatTimestamp = (timestamp: number) => {
 };
 
 const SpeedGraph: React.FC<SpeedGraphProps> = ({ data }) => {
-  useEffect(() => {
-    console.log(data);
-  }, [data]);
-
   const formattedData = data.map((item) => ({
     ...item,
     formattedTimestamp: formatTimestamp(item.timestamp),
@@ -43,8 +39,12 @@ const SpeedGraph: React.FC<SpeedGraphProps> = ({ data }) => {
         {/* Use the formatted timestamp for XAxis */}
         <YAxis dataKey="value" />
         <CartesianGrid stroke="#eee" strokeDasharray="5 5" /> <Tooltip />
-        <Legend />
-        <Line type="monotone" dataKey="value" stroke="#8884d8" />
+        <Line
+          type="monotone"
+          dataKey="value"
+          stroke="#8884d8"
+          strokeWidth={3}
+        />
       </LineChart>
     </div>
   );
